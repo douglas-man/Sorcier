@@ -10,7 +10,7 @@
   <body>
     <h1>Welcome to Sorcier</h1>
 
-    <a href="<c:url value="/sorciers" />">Spittles</a> | 
+    <a href="<c:url value="/sorciers"         />">Sorciers</a> | 
     <a href="<c:url value="/sorcier/register" />">Register</a>
   </body>
 </html>
