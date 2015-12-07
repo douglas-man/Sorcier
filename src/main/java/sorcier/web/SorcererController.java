@@ -33,5 +33,15 @@ public class SorcererController {
 		return "redirect:/sorcerer/"+sorcerer.getUsername();
 	}
 	
+	/* -- add a handler method .. to handle requests for
+	      the profile page.
+	 */
+	@RequestMapping(value="/{username}", method=GET)
+	public String showSorcererProfile(
+		@PathVariable String username, Model model) {
+	  Sorcerer sorcerer = sorcererRepository.findByUsername(username);
+	  model.addAttribute(sorcerer);		
+	  return "profile";	
+	}
 	
 }
