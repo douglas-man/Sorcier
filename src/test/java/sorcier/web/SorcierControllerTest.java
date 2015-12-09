@@ -14,7 +14,7 @@ import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.servlet.view.InternalResourceView;
 
-import sorcier.Sorcier;
+import sorcier.domain.Sorcier;
 import sorcier.dao.SorcierDao;
 import sorcier.web.SorcierController;
 

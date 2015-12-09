@@ -1,4 +1,4 @@
-package sorcier;
+package sorcier.domain;
 
 import java.util.Date;
 

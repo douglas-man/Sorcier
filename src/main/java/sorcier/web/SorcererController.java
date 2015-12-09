@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import sorcier.Sorcerer;
+import sorcier.domain.Sorcerer;
 import sorcier.dao.SorcererDao;
 
 @Controller

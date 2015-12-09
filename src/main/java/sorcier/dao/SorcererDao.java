@@ -1,6 +1,6 @@
 package sorcier.dao;
 
-import sorcier.Sorcerer;
+import sorcier.domain.Sorcerer;
 
 public interface SorcererDao {
 	Sorcerer save(Sorcerer sorcier);

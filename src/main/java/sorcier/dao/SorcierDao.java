@@ -1,7 +1,7 @@
 package sorcier.dao;
 
 import java.util.List;
-import sorcier.Sorcier;
+import sorcier.domain.Sorcier;
 
 public interface SorcierDao {
 	List<Sorcier> findSorciers(long max, int count);

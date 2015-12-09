@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import sorcier.Sorcier;
+import sorcier.domain.Sorcier;
 import sorcier.dao.SorcierDao;
 
  
