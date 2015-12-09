@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import sorcier.Sorcerer;
-import sorcier.data.SorcererRepository;
+import sorcier.dao.SorcererDao;
 
 @Controller
 @RequestMapping("/sorcerer")
 public class SorcererController {
-	private SorcererRepository sorcererRepository;
+	private SorcererDao sorcererDao;
 	
 	@Autowired
 	public SorcererController(
-		SorcererRepository sorcererRepository) {
-	  this.sorcererRepository = sorcererRepository;
+		SorcererDao sorcererDao) {
+	  this.sorcererDao = sorcererDao;
 	}
 	
 	@RequestMapping(value="/register", method=GET)
@@ -30,7 +30,7 @@ public class SorcererController {
 	
 	@RequestMapping(value="/register", method=POST)
 	public String processRegistration(Sorcerer sorcerer) {
-		sorcererRepository.save(sorcerer);
+		sorcererDao.save(sorcerer);
 		
 		return "redirect:/sorcerer/"+sorcerer.getUsername();
 	}
@@ -41,7 +41,7 @@ public class SorcererController {
 	@RequestMapping(value="/{username}", method=GET)
 	public String showSorcererProfile(
 		@PathVariable String username, Model model) {
-	  Sorcerer sorcerer = sorcererRepository.findByUsername(username);
+	  Sorcerer sorcerer = sorcererDao.findByUsername(username);
 	  model.addAttribute(sorcerer);		
 	  return "profile";	
 	}

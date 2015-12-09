@@ -15,15 +15,15 @@ import org.springframework.test.web.servlet.MockMvc;
 // import org.springframework.web.servlet.view.InternalResourceView;
 
 import sorcier.Sorcerer;
-import sorcier.data.SorcererRepository;
+import sorcier.dao.SorcererDao;
 import sorcier.web.SorcererController;
 
 public class SorcererControllerTest {
 
 	@Test
 	public void shouldShowRegistration() throws Exception {
-		SorcererRepository mockRepository = mock(SorcererRepository.class);
-		SorcererController controller = new SorcererController(mockRepository);
+		SorcererDao mockDao = mock(SorcererDao.class);
+		SorcererController controller = new SorcererController(mockDao);
 		MockMvc mockMvc = standaloneSetup(controller).build();
 		
 		mockMvc.perform(get("/sorcerer/register"))
@@ -32,13 +32,13 @@ public class SorcererControllerTest {
 	
 	@Test
 	public void shouldProcessRegistration() throws Exception {
-		SorcererRepository mockRepository = mock(SorcererRepository.class);
+		SorcererDao mockDao = mock(SorcererDao.class);
 		
 		Sorcerer unsaved = new Sorcerer("jbauer", "24hours", "Jack", "Bauer", "jbauer@ctu.gov");
 		Sorcerer saved = new Sorcerer(24L, "jbauer", "24hours", "Jack", "Bauer", "jbauer@ctu.gov");
-		when(mockRepository.save(unsaved)).thenReturn(saved);
+		when(mockDao.save(unsaved)).thenReturn(saved);
 		
-		SorcererController controller = new SorcererController(mockRepository);
+		SorcererController controller = new SorcererController(mockDao);
 		MockMvc mockMvc = standaloneSetup(controller).build();
 		
 		mockMvc.perform(post("/sorcerer/register")
@@ -49,6 +49,6 @@ public class SorcererControllerTest {
 			   .param("email", "jbauser@ctu.gov"))
 			   .andExpect(redirectedUrl("/sorcerer/jbauer"));
 			   
-		verify(mockRepository, atLeastOnce()).save(unsaved);
+		verify(mockDao, atLeastOnce()).save(unsaved);
 	}
 }

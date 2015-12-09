@@ -15,7 +15,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.servlet.view.InternalResourceView;
 
 import sorcier.Sorcier;
-import sorcier.data.SorcierRepository;
+import sorcier.dao.SorcierDao;
 import sorcier.web.SorcierController;
 
 
@@ -26,12 +26,12 @@ public class SorcierControllerTest {
 	@Test
 	public void shouldShowRecentSorciers() throws Exception {
 		List<Sorcier> expectedSorciers = createSorcierList(20);
-		SorcierRepository mockRepository = mock(SorcierRepository.class);
+		SorcierDao mockDao = mock(SorcierDao.class);
 		
-		when(mockRepository.findSorciers(/* -- Long.MAX_VALUE -- */238900, 50))
+		when(mockDao.findSorciers(/* -- Long.MAX_VALUE -- */238900, 50))
 		     .thenReturn(expectedSorciers);
 			 
-	    SorcierController controller = new SorcierController(mockRepository);
+	    SorcierController controller = new SorcierController(mockDao);
 		
 		MockMvc mockMvc = standaloneSetup(controller).setSingleView(
 			new InternalResourceView("/WEB-INF/views/sorciers.jsp")).build();
@@ -45,10 +45,10 @@ public class SorcierControllerTest {
 	@Test
 	public void testSorcier() throws Exception {
 		Sorcier expectedSorcier = new Sorcier("Hello", new Date());
-		SorcierRepository mockRepository = mock(SorcierRepository.class);
-		when(mockRepository.findOne(12345)).thenReturn(expectedSorcier);
+		SorcierDao mockDao = mock(SorcierDao.class);
+		when(mockDao.findOne(12345)).thenReturn(expectedSorcier);
 		
-		SorcierController controller = new SorcierController(mockRepository);
+		SorcierController controller = new SorcierController(mockDao);
 		MockMvc mockMvc = standaloneSetup(controller).build();
 		
 		mockMvc.perform(get("/sorciers/12345"))

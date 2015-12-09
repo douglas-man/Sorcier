@@ -56,8 +56,8 @@ Fast-forward
  .gitignore                                                                          |  49 ++++++++++++++++++++++++++
  src/main/java/sorcier/Sorcerer.java                                                 |  76 ++++++++++++++++++++++++++++++++++++++++
  src/main/java/sorcier/Sorcier.java                                                  |  59 +++++++++++++++++++++++++++++++
- src/main/java/sorcier/data/SorcererRepository.java                                  |   7 ++++
- src/main/java/sorcier/data/SorcierRepository.java                                   |  10 ++++++
+ src/main/java/sorcier/data/SorcererDao.java                                  |   7 ++++
+ src/main/java/sorcier/data/SorcierDao.java                                   |  10 ++++++
  src/main/java/sorcier/web/SorcererController.java                                   |  37 +++++++++++++++++++
  src/main/java/sorcier/web/SorcierController.java                                    |  57 ++++++++++++++++++++++++++++++
  src/main/resources/log4j2.xml                                                       |  29 +++++++++++++++
@@ -83,8 +83,8 @@ Fast-forward
  create mode 100644 .gitignore
  create mode 100644 src/main/java/sorcier/Sorcerer.java
  create mode 100644 src/main/java/sorcier/Sorcier.java
- create mode 100644 src/main/java/sorcier/data/SorcererRepository.java
- create mode 100644 src/main/java/sorcier/data/SorcierRepository.java
+ create mode 100644 src/main/java/sorcier/data/SorcererDao.java
+ create mode 100644 src/main/java/sorcier/data/SorcierDao.java
  create mode 100644 src/main/java/sorcier/web/SorcererController.java
  create mode 100644 src/main/java/sorcier/web/SorcierController.java
  create mode 100644 src/main/resources/log4j2.xml
