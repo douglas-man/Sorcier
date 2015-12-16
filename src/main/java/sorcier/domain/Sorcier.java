@@ -8,20 +8,20 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 public class Sorcier {
 	private final Long id;
 	private final String message;
-	private final Date time;
+	private final Date postedTime;
 	private Double latitude;
 	private Double longitude;
 	
-	public Sorcier(String message, Date time) {
-		this(message, time, null, null);
+	public Sorcier(String message, Date postedTime) {
+		this(message, postedTime, null, null);
 	}
 	
 	public Sorcier(
-		String message, Date time, Double longitude, Double latitude) {
+		String message, Date postedTime, Double longitude, Double latitude) {
 	
 		this.id = null;
 		this.message = message;
-		this.time = time;
+		this.postedTime = postedTime;
 		this.longitude = longitude;
 		this.latitude = latitude;		
 	}
@@ -35,7 +35,7 @@ public class Sorcier {
 	}
 	
 	public Date getTime() {
-		return time;
+		return postedTime;
 	}
 	
 	public Double getLongitude() {
@@ -48,12 +48,12 @@ public class Sorcier {
 	
 	@Override
 	public boolean equals(Object that) {
-		return EqualsBuilder.reflectionEquals(this, that, "id", "time");
+		return EqualsBuilder.reflectionEquals(this, that, "id", "postedTime");
 	}
 	
 	@Override
 	public int hashCode() {
-		return HashCodeBuilder.reflectionHashCode(this, "id", "time");
+		return HashCodeBuilder.reflectionHashCode(this, "id", "postedTime");
 	}
 	
 }

@@ -8,6 +8,8 @@ import sorcier.domain.Sorcerer;
 @Repository
 public class HibernateSorcererDao implements SorcererDao {
 	
+	
+	
 	public Sorcerer save(Sorcerer sorcier) {
 		return null;
 	}
