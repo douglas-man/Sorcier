@@ -32,9 +32,10 @@ public class HibernateSorcererDao implements SorcererDao {
 		return new Sorcerer((Long) id,
 		                sorcerer.getUsername(),
 						sorcerer.getPassword(),
-						sorcerer.getFirstName(),
-						sorcerer.getLastName(),
-						sorcerer.getEmail());
+						sorcerer.getFullName(),
+//						sorcerer.getLastName(),
+						sorcerer.getEmail(),
+						sorcerer.getIsUpdateByEmail());
 	}
 	
 	public Sorcerer findByUsername(String username) {
