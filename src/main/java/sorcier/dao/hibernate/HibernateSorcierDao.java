@@ -36,16 +36,19 @@ public class HibernateSorcierDao implements SorcierDao {
                 " order by created_at desc limit 20",
                 new SpittleRowMapper(), max);
          */
+				
 		String SQL_QUERY = "from Sorcier where id < :id order by postedTime desc limit :count";
         Query query = currentSession().createQuery(SQL_QUERY);
 		query.setParameter("id", max);
 		query.setParameter("count", count);
-		return (List<Sorcier>)query.list();
 		
-		return (List<Sorcier>) currentSession().createCriteria(Sorcier.class)
-		                      .add(Restrictions.lt("id", max))
-							  .addOrder(Order.desc("postedTime"))
-							  .setMaxResults(count).list(); 
+ 		return (List<Sorcier>)query.list();
+				
+		
+//		return (List<Sorcier>) currentSession().createCriteria(Sorcier.class)
+//		                      .add(Restrictions.lt("id", max))
+//							  .addOrder(Order.desc("postedTime"))
+//							  .setMaxResults(count).list(); 
 	}
 
 	public Sorcier findOne(long id) {
