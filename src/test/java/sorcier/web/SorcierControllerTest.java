@@ -44,7 +44,8 @@ public class SorcierControllerTest {
 	
 	@Test
 	public void testSorcier() throws Exception {
-		Sorcier expectedSorcier = new Sorcier("Hello", new Date());
+//		Sorcier expectedSorcier = new Sorcier("Hello", new Date());
+        Sorcier expectedSorcier = new Sorcier(0L, null, "Hello", new Date());
 		SorcierDao mockDao = mock(SorcierDao.class);
 		when(mockDao.findOne(12345)).thenReturn(expectedSorcier);
 		
@@ -61,7 +62,7 @@ public class SorcierControllerTest {
 	private List<Sorcier> createSorcierList(int count) {
 		List<Sorcier> sorciers = new ArrayList<Sorcier>();
 		for(int i=0; i < count; i++) {
-			sorciers.add(new Sorcier("Sorcier " + i, new Date()));
+			sorciers.add(new Sorcier((long)i, null, "Sorcier " + i, new Date()));
 		}
 		return sorciers;
 	}	

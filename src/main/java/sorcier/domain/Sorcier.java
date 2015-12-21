@@ -49,7 +49,7 @@ public class Sorcier {
 //		this.latitude = latitude;		
 	}
 	
-	public long getId() {
+	public Long getId() {
 		return this.id;
 	}
 	

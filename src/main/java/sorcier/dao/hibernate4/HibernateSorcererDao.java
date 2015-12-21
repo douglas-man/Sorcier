@@ -1,4 +1,4 @@
-package sorcier.dao.hibernate;
+package sorcier.dao.hibernate4;
 
 import java.io.Serializable;
 import java.util.List;
@@ -35,7 +35,7 @@ public class HibernateSorcererDao implements SorcererDao {
 						sorcerer.getFullName(),
 //						sorcerer.getLastName(),
 						sorcerer.getEmail(),
-						sorcerer.getIsUpdateByEmail());
+						sorcerer.isUpdateByEmail());
 	}
 	
 	public Sorcerer findByUsername(String username) {

@@ -98,7 +98,7 @@ public class Sorcerer {
 		    return email;
 	}
 	
-	public boolean getIsUpdateByEmail() {
+	public boolean isUpdateByEmail() {
 		    return updateByEmail;
 	}
 	

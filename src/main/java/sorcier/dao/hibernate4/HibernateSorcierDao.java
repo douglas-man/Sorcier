@@ -1,4 +1,4 @@
-package sorcier.dao.hibernate;
+package sorcier.dao.hibernate4;
 
 import java.util.List;
 

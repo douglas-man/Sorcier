@@ -19,6 +19,7 @@
         <spring.framework.version>4.2.3.RELEASE</spring.framework.version>
         <spring.security.version>4.0.3.RELEASE</spring.security.version>
         <hibernate.version>4.3.11.Final</hibernate.version>
+        <h2.version>1.4.190</h2.version>
     </properties>
 
     <dependencies>
@@ -244,6 +245,13 @@
 	<artifactId>spring-security-web</artifactId>
 	<version>${spring.security.version}</version>
             <scope>compile</scope>
+</dependency>
+
+<dependency>
+	<groupId>com.h2database</groupId>
+	<artifactId>h2</artifactId>
+	<version>${h2.version}</version>
+    <scope>compile</scope>
 </dependency>
 
 <dependency>
